@@ -1,0 +1,3 @@
+# Constructor to declare and initialize instance variables
+def __init__(self):
+ self.a=10
