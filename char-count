@@ -1,10 +1,8 @@
 wds=input("Enter any string =")
 d={}
-
 for x in wds:
-    # To get key and default value 0
-    if x in vow:
-        d[x]=d.get(x,0)+1
-     # Toprint key and value in tuple form
-for k,v in sorted(d.items()):
-    print(k,"occurence", v,"Times") 
+# To get key and default value 0
+   d[x]= d.get(x,0)+1
+     # To print key and value in tuple form using items() and It sorts characters in lexicographic (alphabetical) order. 
+for i, j in sorted(d.items()):
+    print(i , j)
