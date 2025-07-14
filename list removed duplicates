@@ -1,0 +1,6 @@
+li=[2,7,8,4,6,2]
+out=[]
+for i in li:
+    if i not in out:
+        out.append(i)
+print("removed duplicates list",out)  
