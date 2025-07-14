@@ -6,4 +6,4 @@ for i in li:
         out.add(i)
     else:
         dup.add(i)
-print("Only duplicate list",out)   
+print("Only duplicate list",list(out))   
