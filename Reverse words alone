@@ -1,0 +1,10 @@
+# Write Python 3 code in this online editor and run it.
+si="Why doctors highly recommend regular consumption of sweet potatoes"
+#This splits the input string into a list of words using spaces.
+wd=si.split();
+print(wd)
+revwd=[i[::-1] for i in wd]
+# This joins the reversed words back together with spaces.
+# It produces the final string
+out=' '.join(revwd)
+print("Reverse word with only same order of words= ",out)
