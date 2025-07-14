@@ -1,0 +1,16 @@
+# Using dict.fromkeys() 
+input_str = "programming"
+#creates a dictionary with characters as keys (which are unique)
+out=''.join(dict.fromkeys(input_str)) 
+
+# Using Manual Loop
+
+def remove_duplicates(s):
+    result = ""
+    for char in s:
+        if char not in result:
+            result += char
+    print(result)         
+
+s=input("Enter any string =")
+remove_duplicates(s)
