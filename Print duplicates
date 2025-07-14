@@ -1,0 +1,9 @@
+li=[2,7,5,8,4,6,2,5,8]
+dup=set()
+out=set()
+for i in li:
+    if i in dup:
+        out.add(i)
+    else:
+        dup.add(i)
+print("Only duplicate list",out)   
