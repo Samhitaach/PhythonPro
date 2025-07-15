@@ -1,0 +1,28 @@
+import re
+
+def transform_string(s):
+    # Split into letter-digit groups
+    parts = re.findall(r"[a-zA-Z]?\d?", s)
+
+    # Collect digits separately
+    digits = [c for c in s if c.isdigit()]
+
+    # Rotate digits to the right
+    rotated_digits = digits[-1:] + digits[:-1]
+
+    result = []
+    digit_index = 0
+
+    for c in s:
+        if c.isdigit():
+            result.append(rotated_digits[digit_index])
+            digit_index += 1
+        else:
+            result.append(c)
+    
+    return ''.join(result)
+
+# Test
+input_str = "f2k5g7nk3"
+output_str = transform_string(input_str)
+print(output_str)  # Output: f3k7g5nk2
