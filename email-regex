@@ -1,0 +1,4 @@
+import re
+email_pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+re.match(email_pattern, "user.name@example.com")
+print("Try programiz.pro")
