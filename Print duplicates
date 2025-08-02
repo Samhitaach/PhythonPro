@@ -3,6 +3,7 @@ dup=set()
 out=set()
 for i in li:
     if i in dup:
+# when adding output duplicate list condition to be other set to avoid printing null set
         out.add(i)
     else:
         dup.add(i)
