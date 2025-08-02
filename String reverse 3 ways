@@ -1,0 +1,12 @@
+si="Best fruits in monsoon for improving health and immunity"
+l=len(si)
+#Method 1
+for i in range(l-1,-1,-1):
+    revws+=si[i]
+print("String reverse",revws)
+#Method 2
+for i in si:
+     # Prepend each character
+    revws=i+revws
+#Method 3
+ revws=si[::-1]
