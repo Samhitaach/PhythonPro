@@ -1,0 +1,18 @@
+si="Best fruits in monsoon for improving health and immunity"
+l=len(si)
+#Print list of words
+wrds=si.split()
+revli=[]
+#out=set()
+for w in wrds:
+    revws=""
+    for i in range(len(w)-1,-1,-1):
+     revws+=w[i]  
+     # Adding individual reverse words to list
+    revli.append(revws) 
+outwd=' '.join(revli)
+   #if i in k:
+#       out.add(i)
+#   else:
+#         k.add(i)
+print("Try programiz.pro",outwd)
