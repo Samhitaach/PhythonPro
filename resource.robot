@@ -11,12 +11,29 @@ Library DateTime
 Library XML
 Library Appium
 Library Android
-RESOURCE   resource.robot
+Library  RequestsLibrary
+resource   resource.robot
+Suite Setup         Open my Browser ${URL}  ${Browser}
+Suite Teardown      Close Browsers
+Test Setup          Open Login Page
+Test Template  Login with invalid credentials
 ***variables***
 ${user_name} SA
 ${PASSWORD} 7868
 ${URL} https://docs.robotframework.org/docs/variables
+${Browser} Chrome
+
+@{Theme}  BANK  WHITE  VIO  COOL
+&{PAI} admin  RA
+
 ***Keywords***
+Login with invalid credentials
 Open the browser with url
 Create Webdriver 
-print("Try programiz.pro")
+[Arguments]  ${username}  ${PASSWORD}
+Log Many     ${username}  ${PASSWORD}
+
+***Test cases***   username    password
+invalid username    iv          ${PASSWORD}
+invalid password    ${user_name}  gt
+valid credentials ${user_name} ${PASSWORD}
