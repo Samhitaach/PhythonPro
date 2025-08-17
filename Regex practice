@@ -1,0 +1,8 @@
+import re
+str="GAIDEN 4 Preorder Standard Edition"
+#Check if the string starts with "GAIDEN" with \A:
+z=re.findall("\AGAIDEN",str)
+if z:
+    print("Match found")
+else:
+     print("No Match found")
