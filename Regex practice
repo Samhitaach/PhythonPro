@@ -6,3 +6,17 @@ if z:
     print("Match found")
 else:
      print("No Match found")
+
+str="GAIDEN 4 Preorder Standard Edition with ^"
+z=re.findall("^GAIDEN",str)
+if z:
+    print("Match found")
+else:
+     print("No Match found")
+#Check if the string has any a, r, or n characters:
+p=re.findall([ark],str)
+#Returns a match for any digit except specified digits (0, 1, 2, or 3) are present
+p=re.findall([0123],str)
+txt = "8 times before 11:45 AM"
+#Check if the string has any two-digit numbers, from 00 to 59:
+x = re.findall("[0-5][0-9]", txt)
