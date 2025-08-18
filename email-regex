@@ -1,4 +1,8 @@
 import re
+^, $ end of string
+# one or more letter, digits, underscore, dot or hyphen
+Then @ followed by domain part
+Then dot domain extension (e.g., com, org)
 email_pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
 re.match(email_pattern, "user.name@example.com")
 print("Try programiz.pro")
