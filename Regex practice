@@ -29,4 +29,6 @@ x = re.findall(r"ain\b", txt)
 #Check if "ain" is present, but NOT at the end of a word: Output: No Match found as ain is at the end
 x = re.findall(r"ain\B", txt)
 #Search for a sequence that starts with "sp", followed by 1 or more  (any) characters, and an "n":
-h=re.findall("sp.+n")    
+h=re.findall("sp.+n") #  ['ain in Spain'] 
+#Search for a sequence that starts with "sp", followed by 0 or  1 character, and an "n":
+x = re.findall("sp.?n", txt)
