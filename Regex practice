@@ -22,3 +22,11 @@ txt = "8 times before 11:45 AM"
 x = re.findall("[0-5][0-9]", txt)
 #Find all lower case characters alphabetically between "a" and "m":
 x = re.findall("[a-m]", txt)
+txt = "The rain in Spain"
+Returns a match where the specified characters are at the beginning or at the end of a word
+(the "r" in the beginning is making sure that the string is being treated as a "raw string")
+x = re.findall(r"ain\b", txt)
+#Check if "ain" is present, but NOT at the end of a word: Output: No Match found as ain is at the end
+x = re.findall(r"ain\B", txt)
+#Search for a sequence that starts with "sp", followed by 1 or more  (any) characters, and an "n":
+h=re.findall("sp.+n")    
