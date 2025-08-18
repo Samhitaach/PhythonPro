@@ -1,0 +1,5 @@
+import re
+txt = "tg37gh-8y-2yu6"
+X=re.findall(r"-?\d+",txt)
+res=sum(int(i) for i in X)
+print("Try programiz.pro",res)
