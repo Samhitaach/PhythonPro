@@ -1,0 +1,8 @@
+def is_valid_phone(phone):
+- ✅ An optional + sign at the beginning
+- ✅ A valid country code (usually 1–3 digits)
+- ✅ A space or hyphen separator (optional)
+- ✅ A valid local number (typically 7–10 digits, possibly grouped)
+
+    pattern = r"^\+?\d{1,3}[-\s]?\d{7,10}$"
+    return bool(re.match(pattern, phone))
