@@ -18,12 +18,17 @@ Suite Teardown      Close Browsers
 Test Setup          Open Login Page
 Test Template  Login with invalid credentials
 ***variables***
+#Constants
+ Login    name=robot    password=secret
+#Scalar variables
 ${user_name} SA
 ${PASSWORD} 7868
 ${URL} https://docs.robotframework.org/docs/variables
 ${Browser} Chrome
 
+#List variables
 @{Theme}  BANK  WHITE  VIO  COOL
+#Dictionary variable
 &{PAI} admin  RA
 
 ***Keywords***
