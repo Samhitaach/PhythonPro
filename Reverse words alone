@@ -8,3 +8,14 @@ revwd=[i[::-1] for i in wd]
 # It produces the final string
 out=' '.join(revwd)
 print("Reverse word with only same order of words= ",out)
+
+Using loop
+revws=""
+out=""
+for i in wd:
+    l=len(i)
+    while(l>0):
+       revws+=i[l-1]
+       l-=1
+    out+=revws+" "
+print("Try programiz.pro",out) 
