@@ -1,0 +1,10 @@
+Immutable
+All fundamental data types were immutable. Once we create an object, we can't modify that object. If we try to do so by chanding the existing variable, then a new object is created.
+In Python PVM won't create the object immediately,first it will check whether object with same content is available, to make it reusable. If not then create a new object to that variable.
+
+OOPS
+Python is an object-oriented language, allowing you to structure your code using classes and objects for better organization and reusability.
+INHERITANCE, Polymorphism
+Inheritance allows us to define a class that inherits all the methods and properties from another class.
+Parent class is the class being inherited from, also called base class.
+Child class is the class that inherits from another class, also called derived class.
