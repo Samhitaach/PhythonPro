@@ -1,0 +1,8 @@
+mn=5578.8578
+qty=5
+code=7
+txtprice=f"Price with three decimal is {mn:.3f}"
+print(txtprice)
+com="User will buy {} units with code {} net price{mn:.2f}"
+gethis=com.format(qty,code,mn)
+print(gethis)
