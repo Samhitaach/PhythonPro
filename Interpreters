@@ -1,0 +1,13 @@
+Interpreters are the computer program that will convert the source code or an high level language into intermediate code (machine level language).
+Initially in source code analysis, Python get source and check for some Indentation rule and check for errors. 
+If there are any errors Python stops its execution and make to modify to prevent errors. 
+This process is called Lexical analysis in python which states that dividing the source code into list of individual tokens.
+At last, by using Python Virtual Machine, interpreter loads the machine language and PVM converts in into 0s and 1 s which prints the results.
+
+Source code(High level language)->Interpreters->machine level language->Get next instruction->Source code(High level language)
+
+a = 3
+b = 7
+c = a + b
+print(c)  # Output: 10
+When run, the interpreter processes each line:
