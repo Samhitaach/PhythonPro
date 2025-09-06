@@ -1,0 +1,25 @@
+# Write Python 3 code in this online editor and run it.
+Common Use Cases
+Logging: Automatically log function calls and arguments.
+Athentication: Check user permissions before executing a function.
+Memoization: Cache results of expensive function calls for performance improvement.
+
+Timing: Measure execution time of functions.
+def Adddecor(func):
+    #  inner wrapper function definition
+    def swadat():    
+     print("First Print")
+        
+     func()
+     print("After initial function")
+     #  decorator Adddecor Return inner wrapper function 
+    return swadat
+def newgen():
+    print("New function")
+@Adddecor    
+def Extrem():
+    print("Second function")
+#  function = decorator_name(function) or @decorator_name syntax before a function is shorthand.
+newgen= Adddecor(newgen) 
+newgen()
+Extrem()
