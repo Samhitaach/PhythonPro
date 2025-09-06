@@ -1,0 +1,32 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+
+import requests
+def req():
+    res=requests.get("http://api.zippopotam.us/us/90210")
+    assert.res.status_code==200
+    print("Response 200")
+    # In the response object, the headers are available as a dictionary (a list of key-value pairs) headers, which makes extracting the value for a specific header a matter of supplying the right key (the header name) to obtain its value. We can then assert on its value using a pytest assertion and the expected value of application/json.
+    assert.res.headers["content_type"]=="application/json"
+    # Requests library comes with a built-in JSON decoder, which we can use to extract the response body from the response object and turn it into a proper JSON object. It is invoked using the json() method, which will raise a ValueError if there is no response body at all, as well as when the response is not valid JSON.
+    
+    response_body = response.json()
+    # {
+#      "post code": "90210",
+#      "country": "United States",
+#      "country abbreviation": "US",
+#      "places": [
+#          {
+#              "place name": "Beverly Hills",
+#              "longitude": "-118.4065",
+#              "state": "California",
+#              "state abbreviation": "CA",
+#              "latitude": "34.0901"
+#          }
+#      ]
+# }
+    assert response_body["places"][0]["place name"] == "Beverly Hills"
+    # let’s check that the list of places returned by the API contains exactly one entry:
+    assert len(response_body["places"]) == 1
+   
+
