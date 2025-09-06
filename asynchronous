@@ -1,0 +1,20 @@
+In this example, the func1(), func2() functions are simulated I/O-bound tasks using asyncio.sleep(). 
+They each "wait" for a different amount of time to simulate varying levels of work.
+
+When you run this code, you'll see that the tasks start concurrently, perform their work asynchronously, and then complete in parallel. 
+The order of completion might vary depending on how the asyncio event loop schedules the tasks. 
+
+
+import asyncio
+async def func1():
+    tsk=asyncio.create_task(func2())
+    print("First")
+    await asyncio.sleep(1)
+    print("CMD1")
+    await asyncio.sleep(2)
+async def func2():
+    await asyncio.sleep(3)
+    print("Second")
+    await asyncio.sleep(1)
+    print("CMD2")
+asyncio.run(func1())   
