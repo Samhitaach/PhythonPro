@@ -10,12 +10,21 @@ out=' '.join(revwd)
 print("Reverse word with only same order of words= ",out)
 
 Using loop
-revws=""
+si="sweet potatoes"
+print("Input",si)
+wd=si.split()
+print("wd",wd)
+rev=""
 out=""
 for i in wd:
     l=len(i)
+    
     while(l>0):
-       revws+=i[l-1]
-       l-=1
-    out+=revws+" "
-print("Try programiz.pro",out) 
+        rev+=i[l-1]
+        l-=1
+        
+    # out="".join(rev)+" "
+    rev+=" " 
+    out= rev
+    
+print("Output",out)
