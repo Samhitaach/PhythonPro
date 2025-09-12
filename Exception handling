@@ -1,0 +1,131 @@
+ raised for various arithmetic errors(ArithmeticError): OverflowError, ZeroDivisionError, FloatingPointError.
+ BufferError: Raised when a buffer related operation cannot be performed.
+ LookupError: raised when a key or index used on a mapping or sequence is invalid: IndexError, KeyError.
+ EOFError
+Raised when the input() function hits an end-of-file condition (EOF) without reading any data. 
+(Note: the io.IOBase.read() and io.IOBase.readline() methods return an empty string when they hit EOF.)
+GeneratorExit
+Raised when a generator or coroutine is closed; see generator.close() and coroutine.close(). 
+It directly inherits from BaseException instead of Exception since it is technically not an error.
+ModuleNotFoundError
+A subclass of ImportError which is raised by import when a module could not be located. 
+It is also raised when None is found in sys.modules.
+IndexError
+Raised when a sequence subscript is out of range. 
+(Slice indices are silently truncated to fall in the allowed range; if an index is not an integer, TypeError is raised.)
+KeyError
+Raised when a mapping (dictionary) key is not found in the set of existing keys.
+KeyboardInterrupt
+Raised when the user hits the interrupt key (normally Control-C or Delete). 
+During execution, a check for interrupts is made regularly. The exception inherits from BaseException
+MemoryError
+Raised when an operation runs out of memory but the situation may still be rescued (by deleting some objects). 
+The associated value is a string indicating what kind of (internal) operation ran out of memory. 
+Note that because of the underlying memory management architecture (C’s malloc() function), the interpreter may not always be able to completely recover from this situation; 
+it nevertheless raises an exception so that a stack traceback can be printed, in case a run-away program was the cause.
+NameError
+Raised when a local or global name is not found. This applies only to unqualified names. 
+NotImplementedError
+This exception is derived from RuntimeError. 
+In user defined base classes, abstract methods should raise this exception when they require derived classes to override the method, 
+or while the class is being developed to indicate that the real implementation still needs to be added.
+
+The class hierarchy for built-in exceptions is:
+
+BaseException
+ ├── BaseExceptionGroup
+ ├── GeneratorExit
+ ├── KeyboardInterrupt
+ ├── SystemExit
+ └── Exception
+      ├── ArithmeticError
+      │    ├── FloatingPointError
+      │    ├── OverflowError
+      │    └── ZeroDivisionError
+      ├── AssertionError
+      ├── AttributeError
+      ├── BufferError
+      ├── EOFError
+      ├── ExceptionGroup [BaseExceptionGroup]
+      ├── ImportError
+      │    └── ModuleNotFoundError
+      ├── LookupError
+      │    ├── IndexError
+      │    └── KeyError
+      ├── MemoryError
+      ├── NameError
+      │    └── UnboundLocalError
+      ├── OSError
+      │    ├── BlockingIOError
+      │    ├── ChildProcessError
+      │    ├── ConnectionError
+      │    │    ├── BrokenPipeError
+      │    │    ├── ConnectionAbortedError
+      │    │    ├── ConnectionRefusedError
+      │    │    └── ConnectionResetError
+      │    ├── FileExistsError
+      │    ├── FileNotFoundError
+      │    ├── InterruptedError
+      │    ├── IsADirectoryError
+      │    ├── NotADirectoryError
+      │    ├── PermissionError
+      │    ├── ProcessLookupError
+      │    └── TimeoutError
+      ├── ReferenceError
+      ├── RuntimeError
+      │    ├── NotImplementedError
+      │    ├── PythonFinalizationError
+      │    └── RecursionError
+      ├── StopAsyncIteration
+      ├── StopIteration
+      ├── SyntaxError
+      │    └── IndentationError
+      │         └── TabError
+      ├── SystemError
+      ├── TypeError
+      ├── ValueError
+      │    └── UnicodeError
+      │         ├── UnicodeDecodeError
+      │         ├── UnicodeEncodeError
+      │         └── UnicodeTranslateError
+      └── Warning
+           ├── BytesWarning
+           ├── DeprecationWarning
+           ├── EncodingWarning
+           ├── FutureWarning
+           ├── ImportWarning
+           ├── PendingDeprecationWarning
+           ├── ResourceWarning
+           ├── RuntimeWarning
+           ├── SyntaxWarning
+           ├── UnicodeWarning
+           └── UserWarning
+
+x=-1
+if x<0:
+    raise Exception("number less than 0")
+
+# The finally block, if specified, will be executed regardless if the try block raises an error or not.
+try:
+  print(x)
+except:
+  print("Something went wrong")
+finally:
+  print("The 'try except' is finished")
+
+x = int(input("Enter x: "))
+print(eval("x*(x+1)*(x+2)"))
+try:
+    print(x)
+except:
+    print("Something went wrong")
+finally:
+    print("Something went wrong")
+
+def process_user_data(data):
+    try:
+        user_id = data['id']
+        return db.get_user(user_id)
+    except KeyError:
+        logger.error("Missing required field: id")
+        raise ValueError("User data must contain an id field")
