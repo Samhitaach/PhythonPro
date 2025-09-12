@@ -1,0 +1,9 @@
+fruits = ['apple', 'banana', 'cherry']
+for index, fruit in enumerate(fruits, start=1):
+    print(index, fruit)
+
+The eval() function in Python evaluates a string as a Python expression and returns the result, 
+allowing dynamic execution of Python code within a program.
+
+x = int(input("Enter x: "))
+print(eval("x*(x+1)*(x+2)"))
