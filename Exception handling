@@ -129,3 +129,14 @@ def process_user_data(data):
     except KeyError:
         logger.error("Missing required field: id")
         raise ValueError("User data must contain an id field")
+
+from selenium,common.exceptions import nosuchelementexception, timeoutException
+try:
+    login(driver)
+    run_test_step(driver)
+except (NoSuchElementException, timeoutException) as e: 
+    logger.error(f"Test step failed:{e}")
+    driver.save_screenshot(test_fail.png)
+    raise
+finally:
+    driver.quit()
