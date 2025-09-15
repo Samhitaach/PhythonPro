@@ -1,0 +1,77 @@
+Framework:
+1.
+Config files: All libraries
+
+2. Object repository:
+
+locators:
+
+*** Keywords ***
+Get Category Locator By Name [Arguments] ${categoryName}
+    [Documentation]
+	...  Get category locator by name  ...
+    
+    ${categoryLocator}   Set Variable   xpath=//a[@id='itemc' and text()='${categoryName}']
+    Return from keyword    ${categoryLocator}
+*** Variables ***
+${usernameTextBox}        id=loginusername
+${passwordTextBox}        id=loginpassword
+${loginButton}            xpath=//button[@onclick='logIn()']
+
+*** Settings ***
+Resource    ../locators/LoginPageLocators.robot
+Resource    CommonPo.robot
+
+Page objects:
+
+*** Keywords ***
+Login To The Application [Arguments] ${username} ${password}
+    [Documentation]
+	...  Login using valid username and password  ...
+    
+    Open Browser To Login Page
+    Submit Login Information [Arguments] ${username} ${password}
+    Username Should Be Visible On The Navigation Bar [Arguments] ${username}
+
+
+3. Test Cases
+*** Setting ***
+Resource   ../object-repository/page-objects/LoginPo.robot
+
+Documentation   This suite includes login tests
+
+Test Teardown  Close Browser
+
+
+*** Variables ***
+${invalidUserName}                       osa
+${invalidPassword}                       test@12
+${WRONG_PASSWORD_ERROR_MESSAGE}          Wrong password.
+${USER_DOES_NOT_EXIST_ERROR_MESSAGE}     User does not exist.
+
+
+*** Test Cases ***
+Verify That An Unregistered Person Cannot Login To The Application
+    [Documentation]    TVerify that an unregistered person cannot login to the application
+    [tags]  Regression
+    
+    Open Browser To Login Page
+    Submit Login Information [Arguments] ${invalidUserName} ${invalidPassword}
+    User Should See An Alert With The Error Message [Arguments] ${USER_DOES_NOT_EXIST_ERROR_MESSAGE}
+    
+    
+Verify That A Registered User Cannot Login To The Application Using An Incorrect Password
+    [Documentation]    Verify that a registered user cannot login to the application using an incorrect password
+    [tags]  Regression
+    
+    Open Browser To Login Page
+    Submit Login Information [Arguments] ${USERNAME} ${invalidPassword}
+    User Should See An Alert With The Error Message [Arguments] ${WRONG_PASSWORD_ERROR_MESSAGE}
+
+
+Verify That A Registered User Can Login To The Application Using The Correct Password
+    [Documentation]    Verify that a registered user can login to the application using the correct password
+    [tags]  Smoke
+    
+    Login To The Application [Arguments] ${USERNAME} ${PASSWORD}
+    Logout From The Application
