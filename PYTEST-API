@@ -1,0 +1,84 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+import requests
+from requests.auth import HTTPBasicAuth 
+from requests.auth import HTTPDigestAuth
+from requests_oauthlib import OAuth1
+from requests_oauthlib import OAuth2Session
+import json
+import  pytest
+
+ENDPOINT = 'https://reqres.in/api/'
+USER = 'users/2'
+
+token = {
+    'access_token': 'eswfld123kjhn1v5423',
+    'refresh_token': 'asdfkljh23490sdf',
+    'token_type': 'Bearer',
+    'expires_in': '-30',     # initially 3600, need to be updated by you
+ }
+client_id = r'foo'
+refresh_url = 'https://provider.com/token'
+protected_url = 'https://provider.com/secret'
+YOUR_APP_KEY=''
+YOUR_APP_SECRET=''
+USER_OAUTH_TOKEN=''
+USER_OAUTH_TOKEN_SECRET=''
+
+# most providers will ask you for extra credentials to be passed along
+# when refreshing tokens, usually for authentication purposes.
+extra = {
+    'client_id': client_id,
+    'client_secret': r'potato',
+}
+
+def gettest():
+    # using HTTPBasicAuth
+    res=requests.get(ENDPOINT+USER,auth=HTTPBasicAuth('Sudhi','SA156$'))
+    # using HTTPDigestAuth
+    res=requests.get(ENDPOINT+USER,auth=HTTPDigestAuth('bhaskar','Sb07311%'))
+    # using auth1
+    authcd=oauth1(YOUR_APP_KEY', 'YOUR_APP_SECRET',
+              'USER_OAUTH_TOKEN', 'USER_OAUTH_TOKEN_SECRET')
+    res=requests.get(ENDPOINT+USER,auth=authcd)          
+      # using auth2
+    assert res.status_code==200
+    print(res) 
+def posttest():
+    payload = {
+    "email": "eve.holt@reqres.in",
+    "password": "cityslickaa"
+}
+    # The json parameter automatically sets the “Content-Type” header to “application/json” and serializes the payload as JSON.
+    res=requests.post(ENDPOINT+USER,json=payload,cookies=,files=,data= arguments)
+    assert res.status_code==201
+    # “json. loads()” method of the JSON module parses the response string and converts it into a Python dictionary that helps in accessing JSON easily within the code.
+    jresp=json.load(res.text)
+    tokn=jresp["token"]
+    print(tokn) 
+    
+def posttest():
+    payload = {
+     "name": "morpheus01",
+    #  Job value is changed
+     "job": "leader" 
+}
+    # The json parameter automatically sets the “Content-Type” header to “application/json” and serializes the payload as JSON.
+    res=requests.put(ENDPOINT+USER,json=payload,cookies=,files=,data= arguments)
+    assert res.status_code==201
+    # “json. loads()” method of the JSON module parses the response string and converts it into a Python dictionary that helps in accessing JSON easily within the code.
+    jresp=json.load(res.text)
+    jb=jresp["job"]
+    print(jb) 
+    # Should pass
+    assert res.json()["job"]=="leader"
+    # Should pass
+    assert jb=="leader"
+    # Should fail as job is updated
+    assert jresp.get("job")=="businessman"
+
+def test_deleteUser_request():  
+ 
+    response = requests.delete(ENDPOINT + "users/2")
+    assert response.status_code==204    
+print("Try programiz.pro")
