@@ -1,0 +1,52 @@
+Xpath=//tagname[@Attribute='value']
+The XPath axes search different nodes in the XML document from the context (current) node. It is utilized to locate the node that is relative to the node on that tree.
+Axis Name	Description
+ancestor	Shows all the ancestors (parent, grandparent, etc.,) related to the context (current) node.
+ancestor-or-self	Shows the context (current) node and all the ancestors.
+attribute	Shows all the atributes of the context (current) node.
+child	Shows all the children of the context (current) node.
+descendant	Specifies all descendants (children, grandchildren, etc.) of the context (current) node.
+descendant-or-self	Specifies all descendants (children, grandchildren, etc.) of the context (current) node and the current node itself.
+following	Specifies all the nodes that appear after the context (current) node.
+following-sibling	Specifies all siblings after the context (current) node.
+namespace	Specifies all the namespace nodes of the context (current) node.
+parent	Specifies the parent of the context (current) node.
+preceding	Specifies all the nodes that appear before the context (current) node in the HTML DOM structure. This does not specify ancestor, attribute, and namespace.
+preceding-sibling	Specifies all the sibling nodes that appear before the context (current) node in the HTML DOM structure. This does not specify descendent, attribute and namespace.
+self	Specifies the context (current) node.
+
+HTML Code: (Gmail login page – Email field)
+
+<input id="Email" type="email" value="" spellcheck="false" class="emailClass" 
+autofocus="" name="Email" placeholder="Enter your email"/>
+
+//*[@id='Email'][@name='Email']
+
+//*[@id='Email' and @name='Email']
+
+//*[@id='Email' or @name='Email']
+
+Contains() is a method used to identify an element that changes dynamically and when we are familiar with some part of the attribute value of that element.
+
+//input[contains(@name,'Email')]
+
+
+//input[starts-with(@id,'Ema')]
+Using text()
+This mechanism is used to locate an element based on the text available(displayed) on a webpage
+//*[text()='New look for sign-in coming soon']
+
+Using last()
+Selects the last element (of mentioned type) out of all input element present
+//input[@type='text'][last()]
+
+In below given xpath, [@type=’text’] will locate text field and function [position()=2] will locate text filed which is located on 2nd position from the top
+//input[@type='text'])[position()=2]
+
+By providing the index position in the square brackets, we could move to the nth element. Based on the below xpath, we could identify the Last Name field.
+//label[2]
+To identify the input field of type text after the FirstName field, we need to use the below xpath.
+//*[@id='FirstName']/following::input[@type='text']
+
+To identify the input field of type text before the LastName field, we need to use the below xpath.
+//*[@id='LastName']//preceding::input[@type='text']"
