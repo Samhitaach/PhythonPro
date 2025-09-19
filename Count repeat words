@@ -1,0 +1,20 @@
+STR="Hello Good morning all Good day all"
+di={}
+# for i in STR:
+#     if i in di:
+#         di[i]=di.get(i,0)+1
+#     else:
+#         di[i]=di.get(i,1)
+# print("Try programiz.pro",di)
+li=[]
+dupli=[]
+wd=STR.split()
+for i in wd:
+    if i in li:
+        dupli.append(i)
+        di[i]=di.get(i,0)+1
+    else:
+        li.append(i)
+        di[i]=di.get(i,1)
+print("Try programiz.pro",dupli)        
+print("Try programiz.pro",di)       
