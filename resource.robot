@@ -11,6 +11,7 @@ Library DateTime
 Library XML
 Library Appium
 Library Android
+Library  DataDriver     ../test_data/LoginData.xlsx    sheet_name=Sheet1
 Library  RequestsLibrary
 resource   resource.robot
 Suite Setup         Open my Browser ${URL}  ${Browser}
