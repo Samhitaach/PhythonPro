@@ -50,3 +50,5 @@ To identify the input field of type text after the FirstName field, we need to u
 
 To identify the input field of type text before the LastName field, we need to use the below xpath.
 //*[@id='LastName']//preceding::input[@type='text']"
+
+//*[@id='leftcontainer']/table/tbody/tr/td[1]
