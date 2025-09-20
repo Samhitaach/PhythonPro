@@ -82,3 +82,20 @@ Swipe Vertically
     Swipe    ${center_x}    ${start_y}    ${center_x}    ${end_y}    ${duration}
 Summary
 Use built-in Swipe, Tap, and Scroll keywords for common gestures.
+
+import subprocess
+
+def validate_media_format(filepath, expected_format):
+    cmd = ['ffprobe', '-v', 'error', '-show_entries', 'format=format_name', '-of', 'default=noprint_wrappers=1:nokey=1', filepath]
+    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+    actual_format = result.stdout.strip()
+    return actual_format == expected_format
+*** Settings ***
+Library    Process
+
+*** Keywords ***
+Validate Media Format
+    [Arguments]    ${filepath}    ${expected_format}
+    ${result}    Run Process    python3    -c    import your_media_validator; print(your_media_validator.validate_media_format('${filepath}', '${expected_format}'))
+    Should Be True    '${result.stdout.strip()}' == 'True'
+Robot's Process or Python library) to validate the file format using libraries like ffprobe (from ffmpeg) or mutagen.
