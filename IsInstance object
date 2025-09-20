@@ -1,0 +1,16 @@
+li = [('A',4,7),(5,9,1,'B'),{621,78,'Z'}]
+k=[]
+for i in li:
+    if isinstance(i,(list,tuple,set)):
+        for j in i:
+            if isinstance(j,(int,float)):
+                k.append(j)
+    elif isinstance(i,(int,float)):
+        k.append(i)
+    elif insinstance(i,dict):
+        for a, b in i.items():
+            if isinstance(a,(int,float)):
+                k.append(a)
+            elif isinstance(b,(int,float)):
+                k.append(b)  
+print(k)  
