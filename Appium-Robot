@@ -72,3 +72,13 @@ Click Button And Check Result
     Click Element    id=com.example.android:id/button_start
     Wait Until Page Contains    Started
     [Teardown]    Close Application
+
+*** Keywords ***
+Swipe Vertically
+    [Arguments]    ${start_y}    ${end_y}    ${duration}=1000
+    ${width}=    Get Window Size    width
+    ${height}=    Get Window Size    height
+    ${center_x}=    Evaluate    ${width} / 2
+    Swipe    ${center_x}    ${start_y}    ${center_x}    ${end_y}    ${duration}
+Summary
+Use built-in Swipe, Tap, and Scroll keywords for common gestures.
