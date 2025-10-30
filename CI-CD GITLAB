@@ -1,0 +1,47 @@
+Setting Up GitLab CI/CD
+
+1. Create a .gitlab-ci.yml File
+stages:
+ - build
+ - test
+ - deploy
+build_job:
+ stage: build
+ script:
+   - echo "Building the application"
+test_job:
+ stage: test
+ script:
+   - echo "Running tests"
+deploy_job:
+ stage: deploy
+ script:
+   - echo "Deploying the application"
+
+2. Use Runners
+
+Runners are agents that execute the jobs in your pipeline. GitLab provides shared runners, or you can set up your own. Specify the runner environment using the image keyword:
+
+test_job:
+stage: test
+image: python:3.9
+script:
+- python -m unittest
+
+3. Define Variables
+
+You can use CI/CD variables to store sensitive information like API keys or configuration settings:
+
+variables:
+DEPLOY_ENV: "production"
+Copy
+These variables can be accessed in jobs using $VARIABLE_NAME.
+
+4. Trigger Pipelines
+
+Pipelines can be triggered by events such as commits, merges, or schedules. You can also define rules for when jobs should run:
+
+test_job:
+script: echo "Running tests"
+rules:
+- if: '$CI_COMMIT_BRANCH == "main"'
