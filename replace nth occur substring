@@ -1,0 +1,9 @@
+import re
+s = "thisisgoodmorninggoodnoongoodnight"
+pattern="good"
+count=[0]
+def immr(match):
+  count[0]+=1
+  return "best" if  count[0]==3 else match.group(0)
+res=re.sub(pattern,immr,s)  
+print("Try programiz.pro",res)
