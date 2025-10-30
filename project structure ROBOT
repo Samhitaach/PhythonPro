@@ -1,0 +1,41 @@
+my_project
+├── tests
+│   ├── authentication
+│   │   ├── login.robot
+│   │   ├── ...
+│   │
+│   ├── master-data
+│   │   ├── customers.robot
+│   │   ├── products.robot
+│   │   ├── ...
+│   │
+│   ├── order
+│   │   ├── order_creation.robot
+│   │   ├── order_processing.robot
+│   │   ├── ...
+│   
+├── resources
+│   ├── common.resource
+│   ├── search.resource
+│   ├── master-data
+│   │   ├── customers.resource
+│   │   ├── products.resource
+│   │   ├── ...
+│   │
+│   ├── ...
+│
+├── data
+│   ├── master-data
+│   │   ├── customers.py
+│   │   ├── products.py
+│   │   ├── ...
+│   │
+│   ├── order
+│   │   ├── order_creation.yaml
+│   │   ├── order_processing.yaml
+│   │   ├── ...
+│
+├── .gitlab-ci.yml
+├── .gitignore
+├── README.md
+├── requirements.txt
