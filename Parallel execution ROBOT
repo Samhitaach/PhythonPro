@@ -1,0 +1,11 @@
+Split execution to suite files:
+
+pabot [path to tests]
+
+Split execution on test level:
+
+pabot --testlevelsplit [path to tests]
+
+Run with 8 parallel processes:
+
+pabot --processes 8 [path to tests]
