@@ -1,0 +1,12 @@
+*** Settings ***
+Library    OpenPyXL
+
+*** Variables ***
+${file_path}    path/to/your/excel/file.xlsx
+
+*** Test Cases ***
+Read Data From Excel
+    ${workbook}=    Load Workbook    ${file_path}
+    ${sheet}=       Get Active Worksheet    ${workbook}
+    ${cell_value}=  Get Cell Value    ${sheet}    A1
+    Log    ${cell_value}
