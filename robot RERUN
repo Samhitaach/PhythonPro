@@ -1,0 +1,3 @@
+robot --output original.xml tests                          # first execute all tests
+robot --rerunfailed original.xml --output rerun.xml tests  # then re-execute failing
+rebot --merge original.xml rerun.xml                       # finally merge results
