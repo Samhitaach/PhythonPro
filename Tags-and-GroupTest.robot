@@ -28,3 +28,15 @@ Created in a standard library. These keywords have the lowest priority.
 #   robot -i sanity -i smoke test_cases/GroupTest.robot
 #   robot --exclude=sanity test_cases/GroupTest.robot
 #   robot -i sanity -e smoke test_cases/GroupTest.robot
+
+Group 
+open browser to login
+open broswer
+mazimize browser window
+title should be
+end
+
+group
+input username 
+input username 
+cick button
