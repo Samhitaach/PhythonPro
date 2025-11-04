@@ -1,0 +1,77 @@
+Listener Interface Overview
+A listener in Robot Framework is a Python class (or module) with special methods to observe and react to test execution events. Listeners are registered when running tests using the --listener command line option or by specifying listeners in the test suite settings.​
+
+Listener classes can implement any subset of the following callback methods:
+
+start_suite(name, attrs): Called when a test suite starts.
+
+end_suite(name, attrs): Called when a test suite ends.
+
+start_test(name, attrs): Called when a test case starts.
+
+end_test(name, attrs): Called when a test case ends.
+
+start_keyword(name, attrs): Called when a keyword starts.
+
+end_keyword(name, attrs): Called when a keyword ends.
+
+log_message(message): Called whenever a log message is written.
+
+message(message): Receives information messages not logged.
+
+output_file(name, path): Called with output file paths (log, report, etc.).
+
+All listener methods receive event-specific parameters (e.g., suite or test name, attributes as dictionaries) to extract runtime information.​
+
+Listeners are powerful for:
+
+Creating custom reports.
+
+Integrating with external systems.
+
+Logging additional info.
+
+Capturing artifacts.
+
+Basic Python Listener Example
+Here's a simple example of a Python listener library:
+
+python
+# Example listener.py
+
+class ExampleListener:
+    ROBOT_LISTENER_API_VERSION = 3
+
+    def start_suite(self, name, attrs):
+        print(f"Suite started: {name}")
+
+    def end_suite(self, name, attrs):
+        print(f"Suite ended: {name}")
+
+    def start_test(self, name, attrs):
+        print(f"Test started: {name}")
+
+    def end_test(self, name, attrs):
+        print(f"Test ended: {name}")
+
+    def log_message(self, message):
+        print(f"Log: {message['message']}")
+The ROBOT_LISTENER_API_VERSION variable should be set appropriately (usually 2 or 3).
+
+Listener methods can use print, custom logics, external APIs, etc.
+
+Listener files can be given directly to Robot Framework:
+robot --listener listener.py tests/
+
+Advanced Usage
+Listeners can be implemented as classes, modules, or even with arguments for configuration. Multiple listeners may be active. The full range of capabilities is covered in the official User Guide's Listener section.​
+
+References
+For a complete list of listener methods, arguments, and advanced options, see the Robot Framework User Guide’s Listener section.​
+
+API details and examples: [Robot Framework Listener Interface — User Guide]​
+
+This makes Robot Framework listeners a versatile way to monitor and extend automation process directly from Python code.​
+
+
+
