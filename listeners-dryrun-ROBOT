@@ -74,4 +74,5 @@ API details and examples: [Robot Framework Listener Interface — User Guide]​
 This makes Robot Framework listeners a versatile way to monitor and extend automation process directly from Python code.​
 
 
-
+The dry run mode can be used to validate the test data; if the dry run passes, the data should be syntactically correct. 
+This mode is triggered using option --dryrun.
