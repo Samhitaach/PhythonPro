@@ -5,37 +5,52 @@ my_project
 │   │   ├── ...
 │   │
 │   ├── master-data
-│   │   ├── customers.robot
-│   │   ├── products.robot
+│   │   ├── household.robot
+│   │   ├── planning.robot
 │   │   ├── ...
 │   │
-│   ├── order
-│   │   ├── order_creation.robot
-│   │   ├── order_processing.robot
+│   ├── goal
+│   │   ├── goal_creation.robot
+│   │   ├── goal_processing.robot
 │   │   ├── ...
 │   
 ├── resources
 │   ├── common.resource
 │   ├── search.resource
 │   ├── master-data
-│   │   ├── customers.resource
-│   │   ├── products.resource
+│   │   ├── household.resource
+│   │   ├── planning.resource
 │   │   ├── ...
 │   │
 │   ├── ...
 │
 ├── data
 │   ├── master-data
-│   │   ├── customers.py
-│   │   ├── products.py
+│   │   ├── household.py
+│   │   ├── planning.py
 │   │   ├── ...
 │   │
-│   ├── order
-│   │   ├── order_creation.yaml
-│   │   ├── order_processing.yaml
+│   ├──goal
+│   │   ├── goal_creation.py
+│   │   ├── goal_processing.py
 │   │   ├── ...
 │
 ├── .gitlab-ci.yml
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
+
+ESYREMEBR:
+test
+authentication> login.robot
+Masterdata>household.robot,planning.robot
+goal>goal_creation.robot, goal_processing.robot
+
+resource
+common.resource
+search.resource
+Masterdata>household.resource,planning.resource
+
+data
+Masterdata>household.py,planning.py
+goal>goal_creation.py, goal_processing.py
