@@ -1,0 +1,9 @@
+The Run Keyword is a built-in keyword in Robot Framework's BuiltIn library, designed to dynamically execute other keywords and
+pass arguments to them during test execution. It allows you to invoke any keyword by its name (as a string), with optional arguments,
+making it valuable for dynamic flows, parameterization, or test orchestration.​
+
+*** Test Cases ***
+Use Run Keyword Example
+    Run Keyword    Log    Hello, world!
+
+Run Keyword If    ${status} == 'SUCCESS'    Log    Operation succeeded!
