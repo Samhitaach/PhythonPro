@@ -1,3 +1,18 @@
+robot tests/smoke_tests.robot
+
+Suppose you have:
+
+File 1: tests/smoke_tests.robot
+
+File 2: tests/regression_tests.robot
+
+File 3: tests/api/critical_api.robot
+
+robot tests/smoke_tests.robot tests/regression_tests.robot tests/api/critical_api.robot
+
+robot tests/
+This command executes every .robot test file inside the tests folder and its subdirectories at once.
+
 Split execution to suite files:
 
 pabot [path to tests]
