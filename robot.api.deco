@@ -1,0 +1,13 @@
+robot.api.deco
+
+from robot.api.deco import keyword
+
+@keyword
+def simple_keyword():
+    """This is a simple keyword without arguments."""
+    print("Executing simple_keyword")
+
+@keyword('Custom Keyword Name', tags=['tag1', 'tag2'])
+def keyword_with_args(arg1, arg2='default'):
+    """Keyword with arguments and custom name/tags."""
+    print(f"Arguments received: {arg1}, {arg2}")
