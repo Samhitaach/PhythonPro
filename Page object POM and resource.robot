@@ -73,3 +73,8 @@ Resource    ../Resources/PageObject/KeywordDefinitionFiles/LoginPage.robot
 Login With Valid Credentials
     Input Credentials    demoUser    demoPassword
     Page Should Contain    Welcome
+
+pom Benefits
+Centralized locators and actions simplify maintenance; changing a locator requires updating only the appropriate file.​
+
+Reusable keywords allow tests to call intuitive actions like LoginPage.Input Credentials without repeating low-level steps.​
