@@ -65,6 +65,7 @@ Input Text   ${login_input}  ${username}
 Input Text  ${pw_input} ${PASSWORD}
 Click Button ${login_BUTTON}
 
+Test Cases
 *** Settings ***
 Resource    ../Resources/PageObject/KeywordDefinitionFiles/LoginPage.robot
 
