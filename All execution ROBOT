@@ -27,6 +27,8 @@ robot --test "Test [One|Two]" path/to/test_suite.robot
 robot test1.robot test2.robot
 robot *.robot
 
+Run Keywords    Keyword From Suite1    AND    Keyword From Suite2
+
 Split execution to suite files:
 
 pabot [path to tests]
