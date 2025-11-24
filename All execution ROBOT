@@ -13,6 +13,20 @@ robot tests/smoke_tests.robot tests/regression_tests.robot tests/api/critical_ap
 robot tests/
 This command executes every .robot test file inside the tests folder and its subdirectories at once.
 
+robot --suite "Login*" path/to/tests/
+
+robot --suite "Login*" path/to/tests/
+
+By tags: Assign tags to test cases, and run those with --include or -i:
+robot --include smoke path/to/test_suite.robot
+robot --include regression --include critical path/to/test_suite.robot
+
+By name: Use a regex/wildcard in the --test option:
+robot --test "Test [One|Two]" path/to/test_suite.robot
+
+robot test1.robot test2.robot
+robot *.robot
+
 Split execution to suite files:
 
 pabot [path to tests]
