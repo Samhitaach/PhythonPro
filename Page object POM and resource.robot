@@ -43,3 +43,32 @@ Log Many     ${username}  ${PASSWORD}
 invalid username    iv          ${PASSWORD}
 invalid password    ${user_name}  gt
 valid credentials ${user_name} ${PASSWORD}
+
+POM
+Create seperate file for locator, keywords and test cases
+HHlocator.PY
+login_input= "id=xnuser"
+pw_input= "id=PUPU6790#"
+login_input= "id=SUBMIT"
+
+keywordfile
+***variables***
+
+${login_input} id=xnuser
+${pw_input} id=PUPU6790#
+${login_BUTTON} id=SUBMIT
+
+***Keywords***
+Input Credentials
+[Arguments]  ${username}  ${PASSWORD}  
+Input Text   ${login_input}  ${username}
+Input Text  ${pw_input} ${PASSWORD}
+Click Button ${login_BUTTON}
+
+*** Settings ***
+Resource    ../Resources/PageObject/KeywordDefinitionFiles/LoginPage.robot
+
+*** Test Cases ***
+Login With Valid Credentials
+    Input Credentials    demoUser    demoPassword
+    Page Should Contain    Welcome
