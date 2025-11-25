@@ -48,6 +48,7 @@ The real device or emulator with Android 11 is set up.
 
 The demo app ApiDemos-debug.apk is used for practice and learning.
 
+The ADIT (Appium Desired Implementation Technique) for Robot Framework is not a standard term, but in practice, it refers to setting up the AppiumLibrary properly for mobile automation using Robot Framework. This is achieved by managing desired capabilities, configuring the environment, and scripting your tests for Android or iOS apps.
 *** Settings ***
 Library    AppiumLibrary
 
