@@ -1,4 +1,5 @@
-
+common keywords
+Open Application, Click Element, Input Text, Wait Until Element Is Visible, Close Application, Swipe, Scroll, Get Text.
 *** Settings ***
 Library    AppiumLibrary
 
