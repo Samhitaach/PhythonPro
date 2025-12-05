@@ -1,0 +1,27 @@
+def merge_sh(arr):
+    if len(arr)<=1:
+        return arr
+    mid=  len(arr)//2
+    left=merge_sh(arr[:mid])
+    right=merge_sh(arr[mid:])
+    return mergeall(left, right)
+    
+def mergeall(left,right):
+    res=[]
+    i=j=0
+    while i<len(left) and j<len(right):
+        if left[i]<=right[j]:
+            res.append(left[i])
+            i+=1
+        else:
+            res.append(right[j])
+            j+=1 
+    res.extend(left[i:])   
+    res.extend(right[j:]) 
+    return res
+    
+arr = [64, 34, 25, 12, 22, 11, 90]
+sorted_arr = merge_sh(arr)
+print(sorted_arr)  # [11, 12, 22, 25, 34, 64, 90]        
+# print("Try programiz.pro",RES)
+print("Try programiz.pro",sorted_arr)
