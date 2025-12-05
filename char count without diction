@@ -1,0 +1,23 @@
+import re
+strinput="aabcccddef"
+li=[]
+prev=None
+
+# RES= re.findall(r"[a-zA-Z]",strinput)
+c=0
+# aabcccddef - 2a1b3c2d1e1f
+for i in strinput:
+    
+    if prev is None:
+        prev=i       
+        c=1
+    elif i== prev:
+        c+=1  
+        #   li.append(str(c))
+    else:    
+        li.append(str(c)+i)
+        prev=i       
+        c=1
+output="".join(li)
+# print("Try programiz.pro",RES)
+print("Try programiz.pro",output)
