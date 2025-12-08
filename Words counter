@@ -1,0 +1,6 @@
+from collections import Counter
+sen=input("Enter any string =")
+wds=sen.lower().split()
+wd_count=Counter(wds)
+print("Try programiz.pro",wds)
+print("Try programiz.pro",dict(wd_count))
