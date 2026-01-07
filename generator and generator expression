@@ -1,3 +1,6 @@
+
+A generator in Python is a special type of function that allows you to produce a sequence of values over time instead of returning them all at once. Unlike normal functions that use return to send back a single value and terminate, generators use yield to pause execution, save their state, and resume later when the next value is requested. This makes them memory-efficient and ideal for working with large or infinite sequences.
+
 def countuop(max_val):
     num=1
     while num<=max_val:
@@ -5,3 +8,17 @@ def countuop(max_val):
         num+=1
 for value in countuop(10):       
     print(value)
+
+A generator expression is a shorter and more compact way to create a generator without using a function or yield. It looks similar to a list comprehension, but uses parentheses () instead of brackets [].
+
+Key Characteristics
+
+Produces items one at a time (lazy evaluation).
+Does not store all values in memory like a list comprehension does.
+Ideal when you only need to iterate through the values once.
+Returns a generator object, not a list.
+Faster and more memory-efficient for large data sets.
+seq=(val for val in range(10) if val%2==0)
+for n in seq:
+    print(n)    
+
