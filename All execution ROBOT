@@ -10,12 +10,12 @@ File 3: tests/api/critical_api.robot
 
 robot tests/smoke_tests.robot tests/regression_tests.robot tests/api/critical_api.robot
 
-robot tests/
 This command executes every .robot test file inside the tests folder and its subdirectories at once.
+robot tests/
+If testcases in testsuite share a naming pattern Login then we can select them to execute
+robot --suite "Login*" tests/regression_tests.robot
 
-robot --suite "Login*" path/to/tests/
-
-robot --suite "Login*" path/to/tests/
+robot --tests "Login*" "goal settings*" newfile/goto/sample.robot
 
 By tags: Assign tags to test cases, and run those with --include or -i:
 robot --include smoke path/to/test_suite.robot
@@ -26,6 +26,14 @@ robot --test "Test [One|Two]" path/to/test_suite.robot
 
 robot test1.robot test2.robot
 robot *.robot
+
+robot \
+  --test "TC1 Login" \
+  --test "TC3 Add Item" \
+  --test "TC5 Checkout" \
+  --test "TC7 Advanced Flow" \
+  --test "TC9 Negative Scenario" \
+  MySuite.robot
 
 Run Keywords    Keyword From Suite1    AND    Keyword From Suite2
 
