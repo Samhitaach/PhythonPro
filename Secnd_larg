@@ -1,0 +1,25 @@
+# Using a Loop
+def find_second_largest(arr):
+   if len(arr) < 2:
+       return "Invalid input. Array must have at least two elements."
+   largest = second_largest = float('-inf')
+   for num in arr:
+       if num > largest:
+           second_largest = largest
+           largest = num
+       elif num > second_largest and num != largest:
+           second_largest = num
+   return second_largest if second_largest != float('-inf') else "No second largest element."
+# Example usage
+array = [10, 20, 4, 45, 99]
+print(find_second_largest(array)) # Output: 45
+
+def find_second_largest(arr):
+   arr = list(set(arr)) # Remove duplicates
+   if len(arr) < 2:
+       return "No second largest element."
+   arr.sort(reverse=True)
+   return arr[1]
+# Example usage
+array = [10, 20, 4, 45, 99]
+print(find_second_largest(array)) # Output: 45
