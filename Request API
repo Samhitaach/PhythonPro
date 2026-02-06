@@ -30,3 +30,25 @@ def req():
     assert len(response_body["places"]) == 1
    
 
+
+04
+05
+06
+07
+08
+09
+10
+11
+12
+import requests
+ 
+url = 'https://example.com/api/data'
+headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+data = {'key1': 'value1', 'key2': 'value2'}
+ 
+response = requests.post(url, data=data, headers=headers)
+ 
+if response.status_code == 200:
+    print('Data sent successfully')
+else:
+    print('Error:', response.status_code)
