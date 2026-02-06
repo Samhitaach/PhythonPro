@@ -7,7 +7,7 @@ for i in li:
                 k.append(j)
     elif isinstance(i,(int,float)):
         k.append(i)
-    elif insinstance(i,dict):
+    elif isinstance(i,dict):
         for a, b in i.items():
             if isinstance(a,(int,float)):
                 k.append(a)
