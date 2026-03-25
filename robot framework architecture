@@ -1,0 +1,28 @@
+Core Framework: The core framework provides the foundation for Robot Framework. It's responsible for parsing test data files, interpreting keywords, and managing the overall test execution flow. 
+
+Test Data: Test cases are written in a human-readable tabular format using plain text files. These files contain keywords, arguments, and comments that define the testing steps. 
+
+Libraries: Libraries are reusable modules that provide functionalities for interacting with different applications, databases, operating systems, or external tools. Robot Framework offers a rich set of built-in libraries, and you can also create custom libraries using Python or other languages. 
+
+Task Repository: The task repository stores the actual implementation of keywords defined in libraries. This separation between keyword definitions and implementations enhances modularity and maintainability. 
+
+Reporting: Robot Framework generates comprehensive reports in HTML format after test execution. These reports provide detailed information on test results, logs, and even screenshots (if applicable). 
+
+ +--------------------+     +--------------------+     +----------------------+
+| Test Data (.txt)   | --> | Robot Framework Core | --> | Task Repository     |
++--------------------+     +--------------------+     +----------------------+
+                             ^                         | (Keyword Implementations)
+                             |                         v
++--------------------+     +--------------------+     +----------------------+
+| Libraries           | --> | Keyword Engine     | --> | Test Execution Engine |
++--------------------+     +--------------------+     +----------------------+
+                             ^         (Processes Keywords)
+                             |
++--------------------+
+| Reporting Engine   |
++--------------------+
+         |
+         v
++--------------------+
+|  Test Reports      |  (HTML format)
++--------------------+
