@@ -7,3 +7,13 @@ Use Run Keyword Example
     Run Keyword    Log    Hello, world!
 
 Run Keyword If    ${status} == 'SUCCESS'    Log    Operation succeeded!
+
+Run Keyword And Return If    False    Non-Existing Keyword
+    Run Keyword And Return If    False    Set Variable    ${non-existing variable}
+    Run Keyword And Return If    True    Non-Existing Keyword When Condition Is True
+    Fail    Not executed
+    [Return]    Not returned
+Run Keyword And Return If Arg Is Positive
+    [Arguments]    @{args}
+    FOR    ${arg}    IN    @{args}
+        Run Keyword And Return If    ${arg} > 0    Set Variable    ${arg} > 0
